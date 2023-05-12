@@ -5,10 +5,11 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link rel="stylesheet" href="{{ asset ('frontend/css/ContactUs.css')}}" />
     <link rel="stylesheet" href="{{ asset ('frontend/css/global.css')}}" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=iCiel Koni:wght@900&display=swap"
-    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+    
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap"
@@ -184,14 +185,14 @@
       var tagsContainer = document.getElementById("tagsContainer");
       if (tagsContainer) {
         tagsContainer.addEventListener("click", function (e) {
-          window.location.href = "./TrangCh.html";
+          window.location.href = "./trangchu";
         });
       }
       
       var tagsContainer1 = document.getElementById("tagsContainer1");
       if (tagsContainer1) {
         tagsContainer1.addEventListener("click", function (e) {
-          window.location.href = "./SKin1.html";
+          window.location.href = "./sukien";
         });
       }
       </script>

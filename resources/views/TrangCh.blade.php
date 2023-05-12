@@ -5,8 +5,9 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link rel="stylesheet" href="{{ asset ('frontend/css/TrangCh.css')}}" />
     <link rel="stylesheet" href="{{ asset ('frontend/css/global.css')}}" />
-    <link href="https://fonts.cdnfonts.com/css/iciel-gotham" rel="stylesheet">
-                
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">  
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap"
@@ -309,14 +310,14 @@
       var tagsContainer1 = document.getElementById("tagsContainer1");
       if (tagsContainer1) {
         tagsContainer1.addEventListener("click", function (e) {
-          window.location.href = "./SKin1.html";
+          window.location.href = "./sukien";
         });
       }
       
       var tagsContainer2 = document.getElementById("tagsContainer2");
       if (tagsContainer2) {
         tagsContainer2.addEventListener("click", function (e) {
-          window.location.href = "./ContactUs.html";
+          window.location.href = "./lienhe";
         });
       }
       </script>

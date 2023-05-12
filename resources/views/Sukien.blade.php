@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link rel="stylesheet" href="{{ asset ('frontend/css/SuKien.css')}}" />
+    <link rel="stylesheet" href="{{ asset ('frontend/css/SuKien1.css')}}" />
     <link rel="stylesheet" href="{{ asset ('frontend/css/global.css')}}" />
-  
+   
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=iCiel Koni:wght@900&display=swap"
@@ -16,139 +16,134 @@
     />
   </head>
   <body>
-    <div class="s-kin">
-      <div class="frame6">
-        <div class="render-1"></div>
-      </div>
-      <div class="bg">
-        <img class="group-icon9" alt="" src="{{ asset ('frontend/img/group5.svg')}}" />
+  <div class="s-kin1">
+    <div class="frame6">
+      <div class="bg1">
+        <img class="group-icon9" alt="" src="{{ asset('frontend/img/group8.svg')}}" />
 
-        <div class="frame7"></div>
-        <div class="frame8"></div>
-        <div class="s-kin-1">Sự kiện 1</div>
-      </div>
-      <img class="group-icon10" alt="" src="{{ asset ('frontend/img/group6.svg')}}" />
+        <img class="frame-icon8" alt="" src="{{ asset('frontend/img/frame7.svg')}}" />
 
-      <div class="khung-cha-v">
-        <img class="group-icon11" alt="" src="{{ asset ('frontend/img/group7.svg')}}" />
+        <img class="vector-icon1" alt="" src="{{ asset('frontend/img/vector1.svg')}}" />
 
-        <div class="group-parent1">
-          <div class="frame-parent7">
-            <div class="rectangle-wrapper">
-              <img
-                class="frame-item"
-                alt=""
-                src="{{ asset ('frontend/img/rectangle-1@2x.png')}}"
-              />
-            </div>
-            <div class="time-parent">
-              <div class="time">
-                <img
-                  class="icons-calendar"
-                  alt=""
-                  src="{{ asset ('frontend/img/icons--calendar.svg')}}"
-                />
+        <img class="vector-icon2" alt="" src="{{ asset('frontend/img/vector2.svg')}}" />
 
-                <div class="div">30/05/2021 - 01/06/2021</div>
+        <img class="vector-icon3" alt="" src="{{ asset('frontend/img/vector3.svg')}}" />
+
+        <img class="vector-icon4" alt="" src="{{ asset('frontend/img/vector4.svg')}}" />
+
+        <img class="vector-icon5" alt="" src="{{ asset('frontend/img/vector5.svg')}}" />
+
+        <img class="vector-icon6" alt="" src="{{ asset('frontend/img/vector6.svg')}}" />
+
+        <img class="vector-icon7" alt="" src="{{ asset('frontend/img/vector7.svg')}}" />
+
+        <div class="s-kin-ni">Sự kiện nổi bật</div>
+
+        
+        @foreach($all_event as $key =>$event)
+        <div class="row">
+          <div class="col-sm-4">
+
+            <div class="s-kin-11">
+              <div class="s-kin-12">
+                <img class="s-kin-1-child" alt="" src="{{$event->event_img}}" />
+                <form>
+                  @csrf
+
+                  <div class="group-parent2">
+                    <div class="frame-wrapper">
+                      <div class="frame-parent7">
+                        <div class="s-kin-1-parent">
+                          <b class="s-kin-13">{{$event->event_name}}</b>
+                          <div class="m-sen-park1">{{$event->event_desc}}</div>
+                        </div>
+                        <div class="time1">
+                          <img class="icons-calendar1" alt="" src="{{ asset('frontend/img/icons--calendar.svg')}}" />
+
+                          <div class="div1">{{$event->date_start}} - {{$event->date_end}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <b class="vn1">{{number_format($event->ticket_price,0,',','.')}}VNĐ</b>
+                    <a href="{{URL::to('/details-event/'.$event->event_slug)}}">
+                      <div class="btn-xem-chi-tit" id="btnXemChiTit">
+                        <div class="xem-chi-tit">Xem chi tiết</div>
+                        <div class="xem-chi-tit-btn">
+                          <img class="group-icon10" alt="" src="{{ asset('frontend/img/group9.svg')}}" />
+
+
+                          <div class="xem-chi-tit1">Xem chi tiết</div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </form>
               </div>
-              <div class="m-sen-park">Đầm sen Park</div>
-              <b class="vn">25.000 VNĐ</b>
             </div>
-          </div>
-          <div class="frame-parent8">
-            <div class="rectangle-container">
-              <img
-                class="frame-inner"
-                alt=""
-                src="{{ asset ('frontend/img/rectangle-11@2x.png')}}"
-              />
-            </div>
-            <div class="lorem-ipsum-is">
-              Lorem Ipsum is not simply random text. It has roots in a piece of
-              classical Latin literature from 45 BC, making it over 2000 years
-              old. words, consectetur, from a Lorem Ipsum passage, and going
-              through the cites of the word in classical literature,
-            </div>
-          </div>
-          <div class="frame-parent9">
-            <div class="rectangle-frame">
-              <img
-                class="frame-inner"
-                alt=""
-                src="{{ asset ('frontend/img/rectangle-11@2x.png')}}"
-              />
-            </div>
-            <div class="lorem-ipsum-is1">
-              Lorem Ipsum is not simply random text. It has roots in a piece of
-              classical Latin literature from 45 BC, making it over 2000 years
-              old. words, consectetur, from a Lorem Ipsum passage, and going
-              through the cites of the word in classical literature,
-            </div>
-          </div>
-          <div class="lorem-ipsum-is-container">
-            <span class="lorem-ipsum-is-container1">
-              <b class="lorem-ipsum">Lorem Ipsum</b>
-              <span class="is-simply-dummy">
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen book. It has survived
-                not only five centuries, but also the leap into electronic sdsd
-                typesetting, remaining cssa essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, of Lorem Ipsum.</span
-              >
-            </span>
+
           </div>
         </div>
+        @endforeach
+
+
+        <img class="previous-btn-icon" alt="" src="{{ asset('frontend/img/previous-btn.svg')}}" />
+
+        <img class="next-btn-icon" alt="" src="{{ asset('frontend/img/next-btn.svg')}}" />
       </div>
-      <img class="frame-icon12" alt="" src="{{ asset ('frontend/img/frame5.svg')}}" />
+      <img class="frame-icon9" alt="" src="{{ asset('frontend/img/frame8.svg')}}" />
 
-      <img class="frame-icon13" alt="" src="{{ asset ('frontend/img/frame6.svg')}}" />
+      <img class="frame-icon10" alt="" src="{{ asset('frontend/img/frame9.svg')}}" />
 
-      <div class="navigation1">
-        <img class="navigation-item" alt="" src="{{ asset ('frontend/img/vector-2.svg')}}" />
-
-        <div class="frame-parent10">
-          <div class="tags-group">
-            <div class="tags3" id="tagsContainer">
-              <b class="sample-text3">Trang chủ</b>
-            </div>
-            <div class="tags4">
-              <b class="sample-text3">Sự kiện</b>
-            </div>
-            <div class="tags3" id="tagsContainer2">
-              <b class="sample-text3">Liên hệ</b>
-            </div>
-          </div>
-          <div class="group-parent2">
-            <img class="group-icon12" alt="" src="{{ asset ('frontend/img/group4.svg')}}" />
-
-            <b class="sample-text3">0123456789</b>
-          </div>
-        </div>
-        <img
-          class="little-little-logo-ngang-11"
-          alt=""
-          src="{{ asset ('frontend/img/little--little-logo-ngang-1@2x.png')}}"
-        />
-      </div>
+      <div class="render-11"></div>
     </div>
+    <div class="navigation2">
+      <img class="navigation-inner" alt="" src="{{ asset('frontend/img/vector-2.svg')}}" />
 
-    <script>
+      <div class="frame-parent11">
+        <div class="tags-container">
+          <div class="tags6" id="tagsContainer">
+            <b class="s-kin-13">Trang chủ</b>
+          </div>
+          <div class="tags7">
+            <b class="s-kin-13">Sự kiện</b>
+          </div>
+          <div class="tags6" id="tagsContainer2">
+            <b class="s-kin-13">Liên hệ</b>
+          </div>
+        </div>
+        <div class="group-parent6">
+          <img class="group-icon14" alt="" src="{{ asset('frontend/img/group4.svg')}}" />
+
+          <b class="s-kin-13">0123456789</b>
+        </div>
+      </div>
+      <img class="little-little-logo-ngang-12" alt=""
+        src="{{ asset('frontend/img/little--little-logo-ngang-1@2x.png')}}" />
+    </div>
+  </div>
+
+  <script>
+    // var btnXemChiTit = document.getElementById("btnXemChiTit");
+    //   if (btnXemChiTit) {
+    //     btnXemChiTit.addEventListener("click", function (e) {
+    //       window.location.href = "/details-event";
+    //     });
+    //   }
+      
       var tagsContainer = document.getElementById("tagsContainer");
       if (tagsContainer) {
         tagsContainer.addEventListener("click", function (e) {
-          window.location.href = "./TrangCh.html";
+          window.location.href = "/home";
         });
       }
       
       var tagsContainer2 = document.getElementById("tagsContainer2");
       if (tagsContainer2) {
         tagsContainer2.addEventListener("click", function (e) {
-          window.location.href = "./ContactUs.html";
+          window.location.href = "/contact";
         });
       }
-      </script>
-  </body>
+  </script>
+</body>
+
 </html>

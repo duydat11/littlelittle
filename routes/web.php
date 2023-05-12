@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,8 @@ Route::get('/thanhtoan', function () {
 });
 Route::get('/index', function () {
     return view('index');
+});
+Route::get('/sukien', [EventController::class, 'index']);
+Route::get('/ctsukien', function () {
+    return view('CTSukien');
 });
