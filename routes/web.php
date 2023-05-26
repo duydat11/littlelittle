@@ -27,6 +27,4 @@ Route::get('/index', function () {
     return view('index');
 });
 Route::get('/sukien', [EventController::class, 'index']);
-Route::get('/ctsukien', function () {
-    return view('CTSukien');
-});
+Route::get('/details-event/{event_slug}',[EventController::class, 'details_event']);

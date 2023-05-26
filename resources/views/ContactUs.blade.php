@@ -114,34 +114,32 @@
         src="{{ asset ('frontend/img/alex-ar-lay-do-shadow-1@2x.png')}}"
       />
 
-      <div class="navigation5">
-        <img class="navigation-child3" alt="" src="{{ asset ('frontend/img/vector-2.svg')}}" />
+      <div class="navigation2">
+      <img class="navigation-inner" alt="" src="{{ asset('frontend/img/vector-2.svg')}}" />
 
-        <div class="frame-parent23">
-          <div class="tags-parent3">
-            <div class="tags15" id="tagsContainer">
-              <b class="sample-text15">Trang chủ</b>
-            </div>
-            <div class="tags15" id="tagsContainer1">
-              <b class="sample-text15">Sự kiện</b>
-            </div>
-            <div class="tags17">
-              <b class="sample-text15">Liên hệ</b>
-            </div>
+      <div class="frame-parent11">
+        <div class="tags-container">
+          <div class="tags7" id="tagsContainer">
+            <b class="s-kin-13">Trang chủ</b>
           </div>
-          <div class="group-parent12">
-            <img class="group-icon33" alt="" src="{{ asset ('frontend/img/group4.svg')}}" />
-
-            <b class="sample-text15">0123456789</b>
+          <div class="tags6" id="tagsContainer1">
+            <b class="s-kin-13">Sự kiện</b>
+          </div>
+          <div class="tags6" id="tagsContainer2">
+            <b class="s-kin-13">Liên hệ</b>
           </div>
         </div>
-        <img
-          class="little-little-logo-ngang-15"
-          alt=""
-          src="{{ asset ('frontend/img/little--little-logo-ngang-1@2x.png')}}"
-        />
+        <div class="group-parent6">
+          <img class="group-icon14" alt="" src="{{ asset('frontend/img/group4.svg')}}" />
+
+          <b class="s-kin-13">0123456789</b>
+        </div>
       </div>
+      <img class="little-little-logo-ngang-12" alt=""
+        src="{{ asset('frontend/img/little--little-logo-ngang-1@2x.png')}}" />
     </div>
+  </div>
+
 
     <div id="giLinHThnhCng" class="popup-overlay" style="display: none">
       <div class="gi-lin-h-thnh-cng">

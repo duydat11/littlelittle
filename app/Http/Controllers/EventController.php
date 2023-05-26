@@ -17,4 +17,10 @@ class EventController extends Controller
         $all_event = DB::table('event')->where('status','1')->orderby('event_id','DESC')->paginate(4); 
         return view('SuKien')->with('all_event',$all_event); 
     }
+
+    public function details_event($event_slug)
+    {
+        $details_event = DB::table('event')->where('event.event_slug', $event_slug)->get();
+        return view('CTSukien')->with('details_event', $details_event);
+    }
 }
