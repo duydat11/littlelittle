@@ -52,19 +52,20 @@
                         <div class="m-sen-park1">{{ $event->event_desc }}</div>
                     </div>
                     <div class="time1">
-                        <img class="icons-calendar1" alt="" src="{{ asset('assets/icons--calendar.svg') }}" />
+                        <img class="icons-calendar1" alt="" src="{{ asset('frontend/img/icons--calendar.svg')}}" />
                         <div class="div36">{{$event->date_start}} - {{$event->date_end}}</div>
                     </div>
                 </div>
             </div>
             <b class="vn1">{{ number_format($event->ticket_price, 0, ',', '.') }} VNĐ</b>
+            <a href="{{URL::to('/details-event/'.$event->event_slug)}}">
             <div class="btn-xem-chi-tit" id="btnXemChiTit" data-slug="{{ $event->event_slug }}">
                 <div class="xem-chi-tit">Xem chi tiết</div>
                 <div class="xem-chi-tit-btn">
                 <img class="group-icon10" alt="" src="{{ asset('frontend/img/group9.svg')}}" />
                     <div class="xem-chi-tit1">Xem chi tiết</div>
                 </div>
-            </div>
+            </div></a>
 
             {{-- <div class="p-t-33">
                 <div class="flex-w flex-r-m p-b-10">
