@@ -14,8 +14,8 @@ class TicketController extends Controller
 {
     public function show_ticket(Request $request)
     {
-        $detail_ticket = DB::table('tbl_ticket')->where('ticket_status', 1)->get();
-        return view('home')->with('detail_ticket', $detail_ticket);
+        $detail_ticket = DB::table('tbl_loaive')->where('ticket_status', 1)->get();
+        return view('TrangCh')->with('detail_ticket', $detail_ticket);
     }
 
 }

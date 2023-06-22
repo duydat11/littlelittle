@@ -65,45 +65,31 @@
 
           <img class="vector-icon1" alt="" src="{{ asset ('frontend/img/vector.svg')}}" />
 
-          <div class="frame-parent2">
-            <div class="gi-gia-nh-container">
-              <div class="gi-gia-nh1">Gói gia đình</div>
+          <form method="post" action="{{URL::to('/order')}}">
+            @csrf
+            <div class="frame-parent2">
+                <select style="border:hidden" class="gi-gia-nh-container" name="ticket_id" id="package" required>
+                    <div class="gi-gia-nh">
+                      <option value="1">Gói gia đình</option>
+                      <option value="2">Gói cá nhân</option>
+                    </div>
+                </select>
+                <img class="frame-icon6" alt="" src="{{ asset('frontend/img/frame.svg') }}" />
+                <input style="border:hidden" class="ngy-s-dng-container" type="date" name="order_date_use" id="date" required placeholder="yyyy-mm-dd" min="{{ date('Y-m-d') }}">
+                <input style="border:hidden" class="h-v-tn-container" type="text" name="order_customer_name" id="fullname" required placeholder="Họ tên">
+                <input style="border:hidden" class="s-in-thoi-container" type="tel" name="order_customer_phone" id="phone" pattern="[0-9]{10,11}" required placeholder="Số điện thoại">
+                <input style="border:hidden" class="a-ch-email-container" type="email" name="order_customer_email" id="email" required placeholder="Email">
+                <img class="frame-icon7" alt="" src="{{ asset('frontend/img/frame1.svg') }}" id="frame1" />
+                <input style="border:hidden" class="s-lng-v-container" type="number" name="order_quantity" id="number" min="1" required placeholder="Số lượng vé">
+                
             </div>
-            <div class="ngy-s-dng-container">
-              <div class="gi-gia-nh1">Ngày sử dụng</div>
-            </div>
-            <div class="h-v-tn-container">
-              <div class="h-v-tn1">Họ và tên</div>
-            </div>
-            <div class="s-in-thoi-container">
-              <div class="h-v-tn1">Số điện thoại</div>
-            </div>
-            <div class="a-ch-email-container">
-              <div class="h-v-tn1">Địa chỉ email</div>
-            </div>
-            <img class="frame-icon6" alt="" src="{{ asset ('frontend/img/frame.svg')}}" />
-
-            <img
-              class="frame-icon7"
-              alt=""
-              src="{{ asset ('frontend/img/frame1.svg')}}"
-              id="frame1"
-            />
-
-            <div class="s-lng-v-container">
-              <div class="h-v-tn1">Số lượng vé</div>
-            </div>
-          </div>
-          <div class="frame5">
-            <img
-              class="group-icon6"
-              alt=""
-              src="{{ asset ('frontend/img/group2.svg')}}"
-              id="group2"
-            />
-
-            <div class="t-v1">Đặt vé</div>
-          </div>
+            <button type="submit" id="frame5">
+                <div class="frame5">
+                    <img class="group-icon6" alt="" src="{{ asset('frontend/img/group2.svg') }}" />
+                    <div class="t-v1">Đặt vé</div>
+                </div>
+            </button>
+        </form>
           <div class="lorem-ipsum-dolor-container1">
             <p class="lorem-ipsum-dolor5">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.

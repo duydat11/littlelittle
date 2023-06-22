@@ -20,7 +20,7 @@ class ContactController extends Controller
         $data['contact_phone'] = $request->contact_phone;
         $data['contact_msg'] = $request->contact_msg;
 
-        DB::table('tbl_contact')->insert($data);
-        return Redirect::to('/contact');
+        DB::table('tbl_lienhe')->insert($data);
+        return Redirect::to('/lienhe');
     }
 }
