@@ -3,59 +3,60 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link rel="stylesheet" href="{{ asset ('frontend/css/ThanhTon.css')}}" />
-    <link rel="stylesheet" href="{{ asset ('frontend/css/global.css')}}" />
-  
+    <link rel="stylesheet" href="{{asset('frontend/css/global.css')}}" />
+    <link rel="stylesheet" href="{{asset('frontend/css/checkout.css')}}"/>
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=iCiel Koni:wght@900&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap"
-    />
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="thanh-ton">
-      <img class="frame-icon17" alt="" src="{{ asset ('frontend/img/frame10.svg')}}" />
+      <img class="frame-icon11" alt="" src="{{ asset ('frontend/img/frame10.svg')}}" />
 
-      <div class="frame11">
-        <img class="group-icon23" alt="" src="{{ asset ('frontend/img/group11.svg')}}" />
+      <div class="frame8">
+        <img class="group-icon19" alt="" src="{{ asset ('frontend/img/group11.svg')}}" />
 
-        <img class="group-icon24" alt="" src="{{ asset ('frontend/img/group12.svg')}}" />
+        <img class="group-icon20" alt="" src="{{ asset ('frontend/img/group12.svg')}}" />
 
-        <div class="frame12" id="frameContainer">
-          <img class="group-icon25" alt="" src="{{ asset ('frontend/img/group2.svg')}}" />
+        <div class="frame9" id="frameContainer">
+          <img class="group-icon21" alt="" src="{{ asset ('frontend/img/group2.svg')}}" />
 
           <div class="thanh-ton1">Thanh toán</div>
         </div>
+
+
+
         <div class="s-tin-thanh-ton">
           <b class="s-tin-thanh">Số tiền thanh toán</b>
           <div class="vn-wrapper">
-            <div class="nguyen-thi-ngoc">360.000 vnđ</div>
+            <div class="nguyen-thi-ngoc">{{number_format($totalAmount, 0, `,` , `.`)}} VNĐ</div>
           </div>
         </div>
         <div class="s-tin-thanh-ton-parent">
           <div class="s-tin-thanh-ton1">
             <b class="s-tin-thanh">Số thẻ</b>
             <div class="wrapper">
-              <div class="nguyen-thi-ngoc">3641 4513 4369 7895</div>
+              <input style="border: none" class="nguyen-thi-ngoc" type="text" name="" required placeholder="Số thẻ"  >
             </div>
           </div>
           <div class="s-tin-thanh-ton1">
             <b class="s-tin-thanh">Họ tên chủ thẻ</b>
             <div class="wrapper">
-              <div class="nguyen-thi-ngoc">NGUYEN THI NGOC TUYEN</div>
+              <input style="border:hidden" class="nguyen-thi-ngoc" type="text" name="" required placeholder="Họ và tên">
             </div>
           </div>
           <div class="s-tin-thanh-ton1">
             <b class="s-tin-thanh">Ngày hết hạn</b>
-            <div class="frame-parent17">
+            <div class="frame-parent13">
               <div class="container">
-                <div class="nguyen-thi-ngoc">05/2025</div>
+                <input style="border:hidden" class="nguyen-thi-ngoc" type="month" name="" required placeholder="Ngày hết hạn"  >
               </div>
               <img
-                class="frame-icon18"
+                class="frame-icon12"
                 alt=""
                 src="{{ asset ('frontend/img/frame11.svg')}}"
                 id="frame1"
@@ -65,81 +66,85 @@
           <div class="s-tin-thanh-ton4">
             <b class="s-tin-thanh">CVV/CVC</b>
             <div class="wrapper1">
-              <div class="nguyen-thi-ngoc">***</div>
+              <input style="border:hidden" class="nguyen-thi-ngoc" type="password" name="" required placeholder="CVC">
             </div>
           </div>
         </div>
-        <div class="s-lng-v2">
+        <div class="s-lng-v1">
           <b class="s-tin-thanh">Số lượng vé</b>
-          <div class="frame-parent18">
+          <div class="frame-parent14">
             <div class="wrapper2">
-              <div class="nguyen-thi-ngoc">4</div>
+              <div class="nguyen-thi-ngoc">{{$show_order_details->order_quantity}}</div>
             </div>
             <div class="v">vé</div>
           </div>
         </div>
-        <div class="ngy-s-dng6">
+        <div class="ngy-s-dng5">
           <b class="s-tin-thanh">Ngày sử dụng</b>
           <div class="wrapper3">
-            <div class="nguyen-thi-ngoc">15/08/2021</div>
+            <div class="nguyen-thi-ngoc">{{$show_order_details->order_date_use}}</div>
           </div>
         </div>
         <div class="thng-tin-lin-h">
           <b class="thng-tin-lin">Thông tin liên hệ</b>
           <div class="nguyn-th-ngc-tuyn-wrapper">
-            <div class="nguyen-thi-ngoc">Nguyễn Thị Ngọc Tuyền</div>
+            <div class="nguyen-thi-ngoc">{{$show_order_details->order_customer_name}}</div>
           </div>
         </div>
         <div class="in-thoi">
           <b class="s-tin-thanh">Điện thoại</b>
           <div class="vn-wrapper">
-            <div class="nguyen-thi-ngoc">0123456789</div>
+            <div class="nguyen-thi-ngoc">{{$show_order_details->order_customer_phone}}</div>
           </div>
         </div>
         <div class="email">
           <b class="s-tin-thanh">Email</b>
           <div class="nguyn-th-ngc-tuyn-wrapper">
-            <div class="nguyen-thi-ngoc">tuyen.nguyen@alta.com.vn</div>
+            <div class="nguyen-thi-ngoc">{{$show_order_details->order_customer_email}}</div>
           </div>
         </div>
-        <img class="vector-icon9" alt="" src="{{ asset ('frontend/img/vector8.svg')}}" />
+        <img class="vector-icon8" alt="" src="{{ asset ('frontend/img/vector8.svg')}}" />
       </div>
       <div class="thanh-ton2">Thanh toán</div>
-      <div class="group-parent9">
-        <img class="group-icon25" alt="" src="{{ asset ('frontend/img/group13.svg')}}" />
+      <div class="group-parent8">
+        <img class="group-icon21" alt="" src="{{ asset ('frontend/img/group13.svg')}}" />
 
-        <div class="v-cng-">VÉ CỔNG - VÉ GIA ĐÌNH</div>
+        <div class="v-cng-">VÉ CỔNG - {{$ticket_full_name}}</div>
       </div>
-      <div class="group-parent10">
-        <img class="group-icon25" alt="" src="{{ asset ('frontend/img/group13.svg')}}" />
+
+
+
+
+      <div class="group-parent9">
+        <img class="group-icon21" alt="" src="{{ asset ('frontend/img/group13.svg')}}" />
 
         <div class="thng-tin-thanh">THÔNG TIN THANH TOÁN</div>
       </div>
       <div class="navigation2">
-      <img class="navigation-inner" alt="" src="{{ asset('frontend/img/vector-2.svg')}}" />
+        <img class="navigation-inner" alt="" src="{{ asset('frontend/img/vector-2.svg')}}" />
 
-      <div class="frame-parent11">
-        <div class="tags-container">
-          <div class="tags7" id="tagsContainer">
-            <b class="s-kin-13">Trang chủ</b>
+        <div class="frame-parent11">
+          <div class="tags-container">
+            <div class="tags6" id="tagsContainer">
+              <b class="s-kin-13">Trang chủ</b>
+            </div>
+            <div class="tags6" id="tagsContainer1">
+              <b class="s-kin-13">Sự kiện</b>
+            </div>
+            <div class="tags7" id="tagsContainer2">
+              <b class="s-kin-13">Liên hệ</b>
+            </div>
           </div>
-          <div class="tags6" id="tagsContainer1">
-            <b class="s-kin-13">Sự kiện</b>
-          </div>
-          <div class="tags6" id="tagsContainer2">
-            <b class="s-kin-13">Liên hệ</b>
+          <div class="group-parent6">
+            <img class="group-icon14" alt="" src="{{ asset('frontend/img/group4.svg')}}" />
+
+            <b class="s-kin-13">0123456789</b>
           </div>
         </div>
-        <div class="group-parent6">
-          <img class="group-icon14" alt="" src="{{ asset('frontend/img/group4.svg')}}" />
-
-          <b class="s-kin-13">0123456789</b>
-        </div>
+        <img class="little-little-logo-ngang-12" alt=""
+          src="{{ asset('frontend/img/little--little-logo-ngang-1@2x.png')}}" />
       </div>
-      <img class="little-little-logo-ngang-12" alt=""
-        src="{{ asset('frontend/img/little--little-logo-ngang-1@2x.png')}}" />
     </div>
-  </div>
       <img
         class="trini-arnold-votay1-2-icon"
         alt=""
@@ -226,7 +231,7 @@
       var frameContainer = document.getElementById("frameContainer");
       if (frameContainer) {
         frameContainer.addEventListener("click", function (e) {
-          window.location.href = "./ThanhTonThnhCng.html";
+          window.location.href = "./thanhtoan";
         });
       }
       
@@ -259,21 +264,21 @@
       var tagsContainer = document.getElementById("tagsContainer");
       if (tagsContainer) {
         tagsContainer.addEventListener("click", function (e) {
-          window.location.href = "./TrangCh.html";
+          window.location.href = "./trangchu";
         });
       }
       
       var tagsContainer1 = document.getElementById("tagsContainer1");
       if (tagsContainer1) {
         tagsContainer1.addEventListener("click", function (e) {
-          window.location.href = "./SKin1.html";
+          window.location.href = "./sukien";
         });
       }
       
       var tagsContainer2 = document.getElementById("tagsContainer2");
       if (tagsContainer2) {
         tagsContainer2.addEventListener("click", function (e) {
-          window.location.href = "./ContactUs.html";
+          window.location.href = "./lienhe";
         });
       }
       </script>
